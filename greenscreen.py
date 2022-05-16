@@ -2,19 +2,19 @@ import cv2
 import numpy as np
 
 def start_screen():
-    video = cv2.VideoCapture(0)
-    image = cv2.imread("weather.jpg")
-    d = 67
-    color = callibrate()
+    video = cv2.VideoCapture(0) # start the webcam
+    image = cv2.imread("weather.jpg") # get the background image
+    color_buffer = 67 #
+    green_color = callibrate()
     u_green = np.array([
-        (color[0]+d if color[0]+d < 255 else 255),
-        (color[1]+d if color[1]+d < 255 else 255),
-        (color[2]+d if color[2]+d < 255 else 255),
+        (green_color[0] + color_buffer if green_color[0] + color_buffer < 255 else 255),
+        (green_color[1] + color_buffer if green_color[1] + color_buffer < 255 else 255),
+        (green_color[2] + color_buffer if green_color[2] + color_buffer < 255 else 255),
     ])
     l_green = np.array([
-        (color[0]-d if color[0]-d > 0 else 0),
-        (color[1]-d if color[1]-d > 0 else 0),
-        (color[2]-d if color[2]-d > 0 else 0),
+        (green_color[0] - color_buffer if green_color[0] - color_buffer > 0 else 0),
+        (green_color[1] - color_buffer if green_color[1] - color_buffer > 0 else 0),
+        (green_color[2] - color_buffer if green_color[2] - color_buffer > 0 else 0),
     ])
     while True:
     
